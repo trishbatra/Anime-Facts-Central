@@ -285,7 +285,8 @@ let gridContianer = document.querySelector(".grid-container")
 animeData.map((elem)=> {
     let theDiv = document.createElement("div")
     let head = document.createElement("h2")
-    let btn = document.createElement("button")
+    let btn = document.createElement("a")
+    btn.setAttribute("href", "/facts.html")
     btn.setAttribute("class", "btn")
     btn.setAttribute("name", `${elem.name}`)
     head.innerHTML = elem.name 
@@ -305,7 +306,7 @@ function check(naam){
     animeFacts.forEach(element => {
         if(naam == element.animeName){
             localStorage.setItem("facts", JSON.stringify(element))
-            window.location = "http://localhost:5500/facts.html";
+            // window.location = "http://localhost:5500/facts.html";
         }else{
             console.log("Not found")
         }
